@@ -31,6 +31,7 @@ a:hover{
 	-webkit-box-shadow:2px 0px 6px #000;
 	-moz-box-shadow:2px 0px 6px #000;
 	background: transparent;
+	font-family: 'Coda', cursive;
 }
 
 #navdiv:hover, #navdiv.hover{
@@ -45,7 +46,7 @@ a:hover{
 	height: 350px;
 	padding: 2% 15% 0 15%;
 	text-shadow:1px 1px 1px #ffffff;
-	font-family: "Lucida Bright", Georgia, serif;
+	font-family: 'Orbitron', sans-serif;
 	margin-bottom: 40px;
 }
 
@@ -56,7 +57,8 @@ a:hover{
 	-webkit-box-shadow:2px 2px 6px #000;
 	-moz-box-shadow:2px 2px 6px #000;
 	padding: 10px 20px;
-	font: 14px consolas;
+	font: 14px;
+	font-family: 'Ubuntu Mono', consolas;
 	border-radius: 5px;
 	margin-bottom: 60px;
 	background-color: white;
@@ -73,6 +75,7 @@ a:hover{
 
 .divtitle{
 	font: bold 14px;
+	font-family: 'Roboto Condensed', consolas;
 	color: #3399CC;						
 }
 
