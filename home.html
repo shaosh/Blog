@@ -9,10 +9,10 @@
     <meta name="author" content="">
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/mainstyle.css" rel="stylesheet">
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js?ver=1.1.4"></script>
 	<script type="text/javascript" src="js/mainscript.js"></script>
 	<script type="text/javascript" src="http://counter.sina.com.cn/ip/" charset="UTF-8"></script>
-	<script type="text/javascript" src="http://www.iplocationtools.com/iplocationtools.js?key=6171616266737d67686f66706c76757b7f6f642d6f717d"></script>
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js?ver=1.1.4"></script>
+	<script type="text/javascript" src="http://www.iplocationtools.com/iplocationtools.js?key=6171616266737d67686f66706c76757b7f6f642d6f717d"></script>	
   </head>
   <body>
 	<script type="text/javascript">
@@ -69,16 +69,16 @@
 					<div id="visitorinfodiv" class="subdiv" style="z-index: 2;">
 						<h4 class="divtitle">Location Info</h4>
 						<hr />
-						<dl id="ipdiv">
+						<dl id="infodl">
 							<dt>Your IP: </dt>
 							<dd id="ip"></dd>
-							<dt>Your Location: </dt><br />
-							<label id="flag"></label>
-							<dd id="location"></dd><br />	
+							<dt>Your Location: </dt>
+							<dd id="flag"></dd>
+							<dd id="location"></dd>	
 							<dt>ZIP Code: </dt>
 							<dd id="zip"></dd>				        
 							<script type="text/javascript"> 
-								document.getElementById('ip').innerText = ILData[0];
+								$('#ip').text(ILData[0]);
 								setip(ILData[0]);						
 							</script>										
 							<script type="text/javascript">				
@@ -87,17 +87,20 @@
 								document.getElementById('flag').innerHTML = ip2location_flag();
 								setzip(ip2location_zip_code());
 							</script>				
-						</dl>
-						<div id="weatherdiv">
-							<b>Weather: </b><br />
-							<label id="icon"></label>
-							<label id="weather"></label>					
-							<label id="temp"></label><br />
-			<!--				<script type="text/javascript">
+							<dt>Weather: </dt>
+							<div class="row">
+								<div class="span3 offset1">									
+									<dd id="icon"></dd>
+								</div>
+								<div class="span6">
+									<dd id="weather"></dd>  
+									<dd id="temp"></dd>									
+								</div>
+							</div>
+							<script type="text/javascript">
 								getWeather();
-							</script>  -->
-						</div>
-						<br />
+							</script> 
+						</dl>
 						<div id="bannerdiv">
 							<script language="JavaScript"> document.write(ip2location_banner1()); </script>
 						</div>

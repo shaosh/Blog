@@ -58,11 +58,11 @@ function getWeather(){
 			success: function(json) {
 				if (json.success == true) {
 				   var ob = json.response.ob;
-				   document.getElementById('weather').innerText = ob.weather + ",";
-				   document.getElementById('temp').innerText = ob.tempF + '°„F';	
-				   var iconpath = "WxIcons/" + ob.icon;
+				   $('#weather').text(ob.weather);
+				   $('#temp').text(ob.tempF + 'F');	
+				   var iconpath = "../WxIcons/" + ob.icon;
 				   var image = new Image;
-				   document.getElementById('icon').appendChild(image);
+				   $('#icon').append(image);
 				   image.src = iconpath;
 				}
 				else {
