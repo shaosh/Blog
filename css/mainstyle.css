@@ -1,3 +1,5 @@
+html, body, #page0, #page1, #page2, #page3, #page4, #page5, #page6, #site {height:100%;width:100%}
+
 body{
 	padding-top: 40px;
 	margin: 0;
@@ -39,8 +41,7 @@ a:hover{
 }
 
 .header{
-	position: relative;
-	background:url(../image/Grand_Canyon_Panorama_2013.jpg) no-repeat center top;
+	position: relative;	
 	background-size: cover;
 	width: 100%;
 	height: 350px;
@@ -48,6 +49,34 @@ a:hover{
 	text-shadow:1px 1px 1px #ffffff;
 	font-family: 'Orbitron', sans-serif;
 	margin-bottom: 40px;
+}
+
+#homeheader{
+	background:url(../image/homeheader.jpg) no-repeat center top;
+}
+
+#blogheader{
+	background:url(../image/blogheader.jpg) no-repeat center top;
+}
+
+#projectheader{
+	background:url(../image/projectheader.jpg) no-repeat center top;
+}
+
+#ebookheader{
+	background:url(../image/ebookheader.jpg) no-repeat center top;
+}
+
+#videoheader{
+	background:url(../image/videoheader.jpg) no-repeat center top;
+}
+
+#musicheader{
+	background:url(../image/musicheader.jpg) no-repeat center top;
+}
+
+#logheader{
+	background:url(../image/logheader.jpg) no-repeat center top;
 }
 
 .subdiv{
@@ -58,7 +87,7 @@ a:hover{
 	-moz-box-shadow:2px 2px 6px #000;
 	padding: 10px 20px;
 	font: 14px;
-	font-family: 'Ubuntu Mono', consolas;
+	font-family: arial;
 	border-radius: 5px;
 	margin-bottom: 60px;
 	background-color: white;
@@ -87,25 +116,38 @@ a:hover{
 	margin:auto auto;
 }
 
-.next{
+.next{	
 	text-align: center;
 	line-height: 50px;	
 	height: 70px;
 	width: 80px;
     position:fixed;
-    top:50%;
+    top:50%;	
 	right:5%;	
 	border-radius: 5px;	
 	background: transparent;
 }
 
-.next:hover, #navdiv.hover{
+
+.prev{	
+	text-align: center;
+	line-height: 50px;	
+	height: 70px;
+	width: 80px;
+    position:fixed;
+    top:50%;	
+	left:5%;	
+	border-radius: 5px;	
+	background: transparent;
+}
+
+.next:hover, .prev:hover, #navdiv.hover{
 	background: rgba(232,232,232,0.5);
 	-webkit-box-shadow:2px 2px 6px #000;
 	-moz-box-shadow:2px 2px 6px #000;
 }
 
-.next a:hover{
+.next a:hover, .prev a:hover{
 	color: grey;
 	text-shadow:1px 1px 1px #ffffff;
 }

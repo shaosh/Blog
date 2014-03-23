@@ -72,3 +72,51 @@ function getWeather(){
 		});
 	});
 }
+
+<!--Page Slide Transition-->
+function slide(){
+	$(function(){
+		$("#site").cycle({
+			fx : "scrollHorz",
+			next : ".next a",
+			prev : ".prev a",
+			startingSlide : 0,
+			timeout : 0
+		});		
+	});
+}
+
+<!--Change navbar when page transition-->
+navs = ["nav0","nav1","nav2","nav3","nav4","nav5","nav6"];
+function navNext(id){
+	var end = 4;
+	var num = id.charAt(end) - 0;
+	var next;
+	if(num == 6){
+		next = 0;
+	}
+	else{
+		next = num + 1;
+	}
+	var nextNav = "#" + navs[next];
+	var currentNav = "#" + navs[num];
+	$(currentNav).removeClass('active');
+	$(nextNav).addClass('active');	
+}
+
+function navPrev(id){
+	var end = 4;
+	var num = id.charAt(end) - 0;
+	var prev;
+	if(num == 0){
+		prev = 6;
+	}
+	else{
+		prev = num - 1;
+	}
+	var prevNav = "#" + navs[prev];
+	var currentNav = "#" + navs[num];
+	$(currentNav).removeClass('active');
+	$(prevNav).addClass('active');	
+}
+
