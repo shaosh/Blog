@@ -8,6 +8,11 @@ body{
 	color: black;
 }
 
+@font-face{
+	font-family: "Transformers";
+	src: url(../Fonts/Transformers.ttf) format("truetype");
+}
+
 div canvas{
 	cursor:crosshair;
 	position:fixed;
@@ -47,7 +52,7 @@ a:hover{
 	height: 350px;
 	padding: 2% 15% 0 15%;
 	text-shadow:1px 1px 1px #ffffff;
-	font-family: 'Orbitron', sans-serif;
+	font-family: 'Transformers','Orbitron', sans-serif;
 	margin-bottom: 40px;
 }
 
@@ -91,7 +96,7 @@ a:hover{
 	border-radius: 5px;
 	margin-bottom: 60px;
 	background-color: white;
-	z-index: 100;
+	z-index: 2;
 }
 
 .subdiv:hover,.subdiv.hover {
@@ -105,7 +110,7 @@ a:hover{
 .divtitle{
 	font: bold 14px;
 	font-family: 'Roboto Condensed', consolas;
-	color: #3399CC;						
+	color: #04C;
 }
 
 #visitorcountdiv{
@@ -121,7 +126,7 @@ a:hover{
 	line-height: 50px;	
 	height: 70px;
 	width: 80px;
-    position:fixed;
+    position:absolute;
     top:50%;	
 	right:5%;	
 	border-radius: 5px;	
@@ -134,7 +139,7 @@ a:hover{
 	line-height: 50px;	
 	height: 70px;
 	width: 80px;
-    position:fixed;
+    position:absolute;
     top:50%;	
 	left:5%;	
 	border-radius: 5px;	
@@ -150,4 +155,27 @@ a:hover{
 .next a:hover, .prev a:hover{
 	color: grey;
 	text-shadow:1px 1px 1px #ffffff;
+}
+
+.container-fluid{
+	margin-right: auto;
+	margin-left: auto;
+	max-width: 1000px;
+}
+
+.navbar-form{
+	margin-right: 5%;
+}
+
+.navbar-form input{
+	font-family: 'Coda', cursive;
+}
+
+#searchbtn{
+	font-family: 'Coda', cursive;
+} 
+
+@font-face{
+	font-family: "Transformers";
+	src: url(../Fonts/Transformers.ttf) format("truetype");
 }

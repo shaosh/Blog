@@ -66,7 +66,7 @@ function getWeather(){
 				   image.src = iconpath;
 				}
 				else {
-				   alert('An error occurred: ' + json.error.description);
+				   // alert('An error occurred: ' + json.error.description);
 				}
 			}
 		});
@@ -75,15 +75,13 @@ function getWeather(){
 
 <!--Page Slide Transition-->
 function slide(){
-	$(function(){
-		$("#site").cycle({
-			fx : "scrollHorz",
-			next : ".next a",
-			prev : ".prev a",
-			startingSlide : 0,
-			timeout : 0
-		});		
-	});
+	$("#site").cycle({
+		fx : "scrollHorz",
+		next : ".next a",
+		prev : ".prev a",
+		startingSlide : 0,
+		timeout : 0
+	});		
 }
 
 <!--Change navbar when page transition-->
@@ -98,10 +96,7 @@ function navNext(id){
 	else{
 		next = num + 1;
 	}
-	var nextNav = "#" + navs[next];
-	var currentNav = "#" + navs[num];
-	$(currentNav).removeClass('active');
-	$(nextNav).addClass('active');	
+	navJump(num, next);
 }
 
 function navPrev(id){
@@ -114,9 +109,34 @@ function navPrev(id){
 	else{
 		prev = num - 1;
 	}
-	var prevNav = "#" + navs[prev];
-	var currentNav = "#" + navs[num];
-	$(currentNav).removeClass('active');
-	$(prevNav).addClass('active');	
+	navJump(num, prev);
 }
 
+function navJump(currentId, targetId){
+	var nextNav = "#" + navs[targetId];
+	var currentNav = "#" + navs[currentId];
+	$(currentNav).removeClass('active');
+	$(nextNav).addClass('active');	
+}
+
+function jump(currentId, targetId){
+	var end = 3;
+	var current = currentId.charAt(end);
+	var target = targetId.charAt(end);
+
+	$("#site").cycle({
+		fx : "fade",
+		next : ".next a",
+		prev : ".prev a",
+		startingSlide : target,
+		timeout : 0,
+	});			
+	navJump(current, target);
+}
+
+<!--login-->
+function login(display){
+	if(display == 'none'){
+		$('#logindiv').slideDown('slow');
+	}
+}

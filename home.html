@@ -25,33 +25,37 @@
 	<script type="text/javascript" src="js/harmony.js"></script>
 	<script>harmony()</script>	
 	<div id="navdiv" class="navbar navbar-inverse navbar-fixed-top">
-		<a class="brand" href="#">Stonecutter's Space</a>
+		<a class="brand" href="javascript:void(0);">Stonecutter's Space</a>
 		<ul class="nav">
 			<li id="nav0" class="active">
-				<a href="home.html">Home</a>
+				<a href="javascript:void(0)" onclick="javascript:jump($('.active').attr('id'), $(this).parent().attr('id'))">Home</a>
 			</li>
 			<li id="nav1">
-				<a href="#">Blog</a>
+				<a href="javascript:void(0)" onclick="javascript:jump($('.active').attr('id'), $(this).parent().attr('id'))">Blog</a>
 			</li>
 			<li id="nav2">
-				<a href="#">Projects</a>
+				<a href="javascript:void(0)" onclick="javascript:jump($('.active').attr('id'), $(this).parent().attr('id'))">Projects</a>
 			</li>
 			<li id="nav3">
-				<a href="#">EBooks</a>
+				<a href="javascript:void(0)" onclick="javascript:jump($('.active').attr('id'), $(this).parent().attr('id'))">EBooks</a>
 			</li>
 			<li id="nav4">
-				<a href="#">Videos</a>
+				<a href="javascript:void(0)" onclick="javascript:jump($('.active').attr('id'), $(this).parent().attr('id'))">Videos</a>
 			</li>
 			<li id="nav5">
-				<a href="#">Music</a>
+				<a href="javascript:void(0)" onclick="javascript:jump($('.active').attr('id'), $(this).parent().attr('id'))">Music</a>
 			</li>
 			<li id="nav6">
-				<a href="#">Log</a>
+				<a href="javascript:void(0)" onclick="javascript:jump($('.active').attr('id'), $(this).parent().attr('id'))">Log</a>
 			</li>
 		</ul>
+		<form class="navbar-form pull-right">
+			<input type="text" class="input-medium" placeholder="Search">
+			<button id="searchbtn" type="submit" class="btn"><i class="icon-search"></i></button>
+		</form>
 	</div>
 	<div id="site">
-		<div id="page0">
+		<div id="page0" class="page">
 			<div id="homeheader" class="header" style="z-index: 2;">		
 				<h1>Stonecutter's Space</h1>
 				<h4>When nothing seems to help, I go look at a stonecutter hammering away at his rock perhaps a hundred<br />
@@ -163,39 +167,49 @@
 					</div>			
 				</div>		
 			</div>
-			<div class="next" style="z-index: 3;">
-				<a href="#" onclick="javascript:navNext($(this).parent().attr('id'))"><h1>&raquo;</h1></a>
+			<div class="next" style="z-index: 2;">
+				<a href="javascript:void(0);" onclick="javascript:navNext($(this).parent().attr('id'))"><h1>&raquo;</h1></a>
 			</div>
-			<div class="prev" style="z-index: 3;">
-				<a href="#" onclick="javascript:navPrev($(this).parent().attr('id'))"><h1>&laquo;</h1></a>
+			<div class="prev" style="z-index: 2;">
+				<a href="javascript:void(0);" onclick="javascript:navPrev($(this).parent().attr('id'))"><h1>&laquo;</h1></a>
 			</div>
 		</div>
 		
-		<div id="page1">
+		<div id="page1" class="page">
 			<div id="blogheader" class="header" style="z-index: 2;">		
 				<h1>Stonecutter's Space</h1>
 				<h4>Experience is something you do not get until just after you need it.</h4>
 			</div>
-			<div class="container">
+			<div class="container-fluid">
 				<div class="row-fluid">
 					<div class="span3">
-						<div class="subdiv" style="z-index: 2;">					
-						</div>	
+						<div id="categorydiv"class="subdiv" style="z-index: 2;">
+							<h4 class="divtitle">Categories</h4>
+							<hr />
+						</div>
+						<div id="keyworddiv"class="subdiv" style="z-index: 2;">
+							<h4 class="divtitle">Keywords</h4>
+							<hr />
+						</div>
 					</div>
-					<div class="span7 offset1">
+					<div class="span9">
+						<div id="postdiv" class="subdiv" style="z-index: 2;">	
+							<h4 class="divtitle">Posts</h4>
+							<hr />
 						
-					</div>			
-				</div>		
+						</div>
+					</div>
+				</div>
 			</div>
-			<div class="next" style="z-index: 3;">
-				<a href="#" onclick="javascript:navNext($(this).parent().parent().attr('id'))"><h1>&raquo;</h1></a>
+			<div class="next" style="z-index: 2;">
+				<a href="javascript:void(0);" onclick="javascript:navNext($(this).parent().parent().attr('id'))"><h1>&raquo;</h1></a>
 			</div>
-			<div class="prev" style="z-index: 3;">
-				<a href="#" onclick="javascript:navPrev($(this).parent().parent().attr('id'))"><h1>&laquo;</h1></a>
+			<div class="prev" style="z-index: 2;">
+				<a href="javascript:void(0);" onclick="javascript:navPrev($(this).parent().parent().attr('id'))"><h1>&laquo;</h1></a>
 			</div>
 		</div>
 		
-		<div id="page2">
+		<div id="page2" class="page">
 			<div id="projectheader" class="header" style="z-index: 2;">		
 				<h1>Stonecutter's Space</h1>
 				<h4>Losers always whine about their best...</h4>
@@ -211,15 +225,15 @@
 					</div>			
 				</div>		
 			</div>
-			<div class="next" style="z-index: 3;">
-				<a href="#" onclick="javascript:navNext($(this).parent().parent().attr('id'))"><h1>&raquo;</h1></a>
+			<div class="next" style="z-index: 2;">
+				<a href="javascript:void(0);" onclick="javascript:navNext($(this).parent().parent().attr('id'))"><h1>&raquo;</h1></a>
 			</div>
-			<div class="prev" style="z-index: 3;">
-				<a href="#" onclick="javascript:navPrev($(this).parent().parent().attr('id'))"><h1>&laquo;</h1></a>
+			<div class="prev" style="z-index: 2;">
+				<a href="javascript:void(0);" onclick="javascript:navPrev($(this).parent().parent().attr('id'))"><h1>&laquo;</h1></a>
 			</div>
 		</div>
 		
-		<div id="page3">
+		<div id="page3" class="page">
 			<div id="ebookheader" class="header" style="z-index: 2;">		
 				<h1>Stonecutter's Space</h1>
 				<h4>Run, Forrest, Run!</h4>
@@ -235,15 +249,15 @@
 					</div>			
 				</div>		
 			</div>
-			<div class="next" style="z-index: 3;">
-				<a href="#" onclick="javascript:navNext($(this).parent().parent().attr('id'))"><h1>&raquo;</h1></a>
+			<div class="next" style="z-index: 2;">
+				<a href="javascript:void(0);" onclick="javascript:navNext($(this).parent().parent().attr('id'))"><h1>&raquo;</h1></a>
 			</div>
-			<div class="prev" style="z-index: 3;">
-				<a href="#" onclick="javascript:navPrev($(this).parent().parent().attr('id'))"><h1>&laquo;</h1></a>
+			<div class="prev" style="z-index: 2;">
+				<a href="javascript:void(0);" onclick="javascript:navPrev($(this).parent().parent().attr('id'))"><h1>&laquo;</h1></a>
 			</div>
 		</div>
 		
-		<div id="page4">
+		<div id="page4" class="page">
 			<div id="videoheader" class="header" style="z-index: 2;">		
 				<h1>Stonecutter's Space</h1>
 				<h4>-Dad, what's dunk?<br />
@@ -260,18 +274,18 @@
 					</div>			
 				</div>		
 			</div>
-			<div class="next" style="z-index: 3;">
-				<a href="#" onclick="javascript:navNext($(this).parent().parent().attr('id'))"><h1>&raquo;</h1></a>
+			<div class="next" style="z-index: 2;">
+				<a href="javascript:void(0);" onclick="javascript:navNext($(this).parent().parent().attr('id'))"><h1>&raquo;</h1></a>
 			</div>
-			<div class="prev" style="z-index: 3;">
-				<a href="#" onclick="javascript:navPrev($(this).parent().parent().attr('id'))"><h1>&laquo;</h1></a>
+			<div class="prev" style="z-index: 2;">
+				<a href="javascript:void(0);" onclick="javascript:navPrev($(this).parent().parent().attr('id'))"><h1>&laquo;</h1></a>
 			</div>
 		</div>
 		
-		<div id="page5">
+		<div id="page5" class="page">
 			<div id="musicheader" class="header" style="z-index: 2;">		
 				<h1>Stonecutter's Space</h1>
-				<h4>Unbreakable.</h4>
+				<h4>You have a long way to go.</h4>
 			</div>
 			<div class="container">
 				<div class="row-fluid">
@@ -284,15 +298,15 @@
 					</div>			
 				</div>		
 			</div>
-			<div class="next" style="z-index: 3;">
-				<a href="#" onclick="javascript:navNext($(this).parent().parent().attr('id'))"><h1>&raquo;</h1></a>
+			<div class="next" style="z-index: 2;">
+				<a href="javascript:void(0);" onclick="javascript:navNext($(this).parent().parent().attr('id'))"><h1>&raquo;</h1></a>
 			</div>
-			<div class="prev" style="z-index: 3;">
-				<a href="#" onclick="javascript:navPrev($(this).parent().parent().attr('id'))"><h1>&laquo;</h1></a>
+			<div class="prev" style="z-index: 2;">
+				<a href="javascript:void(0);" onclick="javascript:navPrev($(this).parent().parent().attr('id'))"><h1>&laquo;</h1></a>
 			</div>
 		</div>
 		
-		<div id="page6">
+		<div id="page6" class="page">
 			<div id="logheader" class="header" style="z-index: 2;">		
 				<h1>Stonecutter's Space</h1>
 				<h4>Water dropping day by day wears the hardest rock away.</h4>
@@ -301,21 +315,23 @@
 				<div class="row-fluid">
 					<div class="span10 offset1">
 						<div class="subdiv" style="z-index: 2;">
-							<dl class="dl-horizontal">
-								<dt>Mar 21, 2014</dt>
-								<dd>Project Starts. Complete navbar, header and mainbody of Home page</dd>
+							<dl class="dl-horizontal">		
+								<dt>Mar 23, 2014</dt>
+								<dd>Add links to navbar with tiny issues. Add search to navbar. Complete static part of blog page. </dd>
 								<dt>Mar 22, 2014</dt>
 								<dd>Add all seven pages. Complete slide transition and related navbar actions</dd>
+								<dt>Mar 21, 2014</dt>
+								<dd>Project Starts. Complete navbar, header and mainbody of Home page</dd>
 							</dl>
 						</div>	
 					</div>		
 				</div>		
 			</div>
-			<div class="next" style="z-index: 3;">
-				<a href="#" onclick="javascript:navNext($(this).parent().parent().attr('id'))"><h1>&raquo;</h1></a>
+			<div class="next" style="z-index: 2;">
+				<a href="javascript:void(0);" onclick="javascript:navNext($(this).parent().parent().attr('id'))"><h1>&raquo;</h1></a>
 			</div>
-			<div class="prev" style="z-index: 3;">
-				<a href="#" onclick="javascript:navPrev($(this).parent().parent().attr('id'))"><h1>&laquo;</h1></a>
+			<div class="prev" style="z-index: 2;">
+				<a href="javascript:void(0);" onclick="javascript:navPrev($(this).parent().parent().attr('id'))"><h1>&laquo;</h1></a>
 			</div>
 		</div>
 	</div>
