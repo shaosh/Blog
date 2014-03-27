@@ -1,0 +1,409 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Stonecutter's Space</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/mainstyle.css" rel="stylesheet">
+	<link href='http://fonts.googleapis.com/css?family=Orbitron:900' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Coda' rel='stylesheet' type='text/css'>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js?ver=1.1.4"></script>
+	<script type="text/javascript" src="js/mainscript.js"></script>
+	<script type="text/javascript" src="js/jquery.cycle.all.js"></script>
+	<script type="text/javascript" src="http://counter.sina.com.cn/ip/" charset="UTF-8"></script>
+	<script type="text/javascript" src="http://www.iplocationtools.com/iplocationtools.js?key=6171616266737d67686f66706c76757b7f6f642d6f717d"></script>	
+  </head>
+  <body onload="slide();">
+	<script type="text/javascript">
+		detectip();		
+	</script>
+	<script type="text/javascript" src="js/harmony.js"></script>
+	<script>harmony()</script>	
+	<div id="navdiv" class="navbar navbar-inverse navbar-fixed-top">
+		<a class="brand" href="index.html">Stonecutter's Space</a>
+		<ul class="nav">
+			<li id="nav0" class="active">
+				<a href="javascript:void(0)" onclick="javascript:jump($('.active').attr('id'), $(this).parent().attr('id'))">Home</a>
+			</li>
+			<li id="nav1">
+				<a href="javascript:void(0)" onclick="javascript:jump($('.active').attr('id'), $(this).parent().attr('id'))">Blog</a>
+			</li>
+			<li id="nav2">
+				<a href="javascript:void(0)" onclick="javascript:jump($('.active').attr('id'), $(this).parent().attr('id'))">Projects</a>
+			</li>
+			<li id="nav3">
+				<a href="javascript:void(0)" onclick="javascript:jump($('.active').attr('id'), $(this).parent().attr('id'))">EBooks</a>
+			</li>
+			<li id="nav4">
+				<a href="javascript:void(0)" onclick="javascript:jump($('.active').attr('id'), $(this).parent().attr('id'))">Videos</a>
+			</li>
+			<li id="nav5">
+				<a href="javascript:void(0)" onclick="javascript:jump($('.active').attr('id'), $(this).parent().attr('id'))">Music</a>
+			</li>
+			<li id="nav6">
+				<a href="javascript:void(0)" onclick="javascript:jump($('.active').attr('id'), $(this).parent().attr('id'))">Log</a>
+			</li>
+		</ul>
+		<form class="navbar-form pull-right">
+			<input type="text" class="input-medium" placeholder="Search">
+			<button id="searchbtn" type="submit" class="btn"><i class="icon-search"></i></button>
+		</form>
+	</div>
+	<div id="site">
+		<div id="page0" class="page">
+			<div id="homeheader" class="header" style="z-index: 2;">		
+				<h1>Stonecutter's Space</h1>
+				<h4>When nothing seems to help, I go look at a stonecutter hammering away at his rock perhaps a hundred<br />
+				   times without as much as a crack showing in it. Yet at the hundred and first blow it will split in two, <br />
+				   and I know it was not that blow that did it, but all that had gone before.<br />
+				</h4>
+			</div>
+			<div class="container">
+				<div class="row-fluid">
+					<div class="span5">
+						<div id="selfdiv" class="subdiv" style="z-index: 2;">					
+							<h4 class="divtitle">Profile</h4>
+							<hr />					
+							<img id="avatar" src="./image/img-avatar.jpg" class="img-polaroid"/>					
+							<ul id="infolist">
+								<li>Shihuan Shao</li>							
+								<li>Master student of Computer Science</li>
+								<li>Arizona State University</li>							
+								<li><a href="mailto:sshao1@asu.edu">Contact: sshao1 at asu dot edu</a></li>		
+								<li>Web development in Java &amp; Python</li>							
+							</ul>								
+						</div>				
+						<div class="span11">
+							<div id="visitorinfodiv" class="subdiv" style="z-index: 2;">
+								<h4 class="divtitle">Location Info</h4>
+								<hr />
+								<dl id="infodl">
+									<dt>Your IP: </dt>
+									<dd id="ip"></dd>
+									<dt>Your Location: </dt>
+									<dd id="flag"></dd>
+									<dd id="location"></dd>	
+									<dt>ZIP Code: </dt>
+									<dd id="zip"></dd>				        
+									<script type="text/javascript"> 
+										$('#ip').text(ILData[0]);
+										setip(ILData[0]);						
+									</script>										
+									<script type="text/javascript">				
+										document.getElementById('location').innerText = ip2location_country_long() + ', ' + ip2location_region() + ', ' + ip2location_city() ;
+										document.getElementById('zip').innerText = ip2location_zip_code();	
+										document.getElementById('flag').innerHTML = ip2location_flag();
+										setzip(ip2location_zip_code());
+									</script>				
+									<dt>Weather: </dt>
+									<div class="row">
+										<div class="span3 offset1">									
+											<dd id="icon"></dd>
+										</div>
+										<div class="span6">
+											<dd id="weather"></dd>  
+											<dd id="temp"></dd>									
+										</div>
+									</div>
+									<script type="text/javascript">
+										getWeather();
+									</script> 
+								</dl>
+								<div id="bannerdiv">
+									<script language="JavaScript"> document.write(ip2location_banner1()); </script>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="span7">
+						<div class="span10 offset1">
+							<div class="span12">
+								<div id="linkdiv" class="subdiv" style="z-index: 2;">
+									<h4 class="divtitle">My Links</h4>
+									<hr />				
+									<dl>							
+										<dt>My LinkedIn</dt>
+										<dd><a href="http://www.linkedin.com/pub/shihuan-shao/27/782/14b/">www.linkedin.com/pub/shihuan-shao/27/782/14b/</a></dd>
+										<dt>My GitHub</dt>
+										<dd><a href="http://www.github.com/shaosh">www.github.com/shaosh</a></dd>
+									</dl>
+								</div>
+							</div>	
+							<div class="span8 offset2">
+								<div id="visitorcountdiv" class="subdiv" style="z-index: 2;">
+									<h4 class="divtitle">Visitor Counter</h4>
+									<hr />
+									<div id="clustrmaps-widget">
+										<script type="text/javascript">
+											var _clustrmaps = {'url' : 'http://hammeringawayatrock.net', 'user' : 1085201, 'server' : '2', 'id' : 'clustrmaps-widget', 'version' : 1, 'date' : '2013-03-20', 'lang' : 'zh', 'corners' : 'square' };
+											(function (){ var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = 'http://www2.clustrmaps.com/counter/map.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);})();
+										</script>
+										<noscript>
+											<a href="http://www2.clustrmaps.com/user/e24108f11">
+												<img src="http://www2.clustrmaps.com/stats/maps-no_clusters/hammeringawayatrock.net-thumb.jpg" alt="Locations of visitors to this page" />
+											</a>
+										</noscript>
+									</div>
+								</div>
+							</div>					
+						</div>
+						<div class="span11">
+							<div id="experiencediv" class="subdiv" style="z-index: 2;">
+								<h4 class="divtitle">My Experience</h4>
+								<hr />	
+								<dl>							
+									<dt>Software Development Intern in Pearson</dt>
+									<dd>2013.6 - 2013.8 EC2 Configuration Automation</dd>
+									<dt>Teaching Assistant in ASU</dt>
+									<dd>2013.1 - 2013.5 CSE205 Object Oriented Programming</dd>
+								</dl>							
+							</div>
+						</div>
+					</div>			
+				</div>		
+			</div>
+			<div class="next" style="z-index: 2;">
+				<a href="javascript:void(0);" onclick="javascript:navNext($(this).parent().attr('id'))"><h1>&raquo;</h1></a>
+			</div>
+			<div class="prev" style="z-index: 2;">
+				<a href="javascript:void(0);" onclick="javascript:navPrev($(this).parent().attr('id'))"><h1>&laquo;</h1></a>
+			</div>
+		</div>
+		
+		<div id="page1" class="page">
+			<div id="blogheader" class="header" style="z-index: 2;">		
+				<h1>Stonecutter's Space</h1>
+				<h4>Experience is something you do not get until just after you need it.</h4>
+			</div>
+			<div class="container-fluid">
+				<div class="row-fluid">
+					<div class="span3">
+						<div id="categorydiv"class="subdiv" style="z-index: 2;">
+							<h4 class="divtitle">Categories</h4>
+							<hr />
+						</div>
+						<div id="keyworddiv"class="subdiv" style="z-index: 2;">
+							<h4 class="divtitle">Keywords</h4>
+							<hr />
+						</div>
+					</div>
+					<div class="span9">
+						<div id="postdiv" class="subdiv" style="z-index: 2;">	
+							<h4 class="divtitle">Posts</h4>
+							<hr />
+						
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="next" style="z-index: 2;">
+				<a href="javascript:void(0);" onclick="javascript:navNext($(this).parent().parent().attr('id'))"><h1>&raquo;</h1></a>
+			</div>
+			<div class="prev" style="z-index: 2;">
+				<a href="javascript:void(0);" onclick="javascript:navPrev($(this).parent().parent().attr('id'))"><h1>&laquo;</h1></a>
+			</div>
+		</div>
+		
+		<div id="page2" class="page">
+			<div id="projectheader" class="header" style="z-index: 2;">		
+				<h1>Stonecutter's Space</h1>
+				<h4>Losers always whine about their best...</h4>
+			</div>
+			<div class="container">
+				<div class="row-fluid">
+					<div class="span12">
+						<div id="projectdiv" class="subdiv" style="z-index: 2;">	
+							<h4 class="divtitle">Projects</h4>
+							<hr />
+						
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="next" style="z-index: 2;">
+				<a href="javascript:void(0);" onclick="javascript:navNext($(this).parent().parent().attr('id'))"><h1>&raquo;</h1></a>
+			</div>
+			<div class="prev" style="z-index: 2;">
+				<a href="javascript:void(0);" onclick="javascript:navPrev($(this).parent().parent().attr('id'))"><h1>&laquo;</h1></a>
+			</div>
+		</div>
+		
+		<div id="page3" class="page">
+			<div id="ebookheader" class="header" style="z-index: 2;">		
+				<h1>Stonecutter's Space</h1>
+				<h4>Run, Forrest, Run!</h4>
+			</div>
+			<div class="container">
+				<div class="row-fluid">
+					<div class="span12">
+						<div id="ebookdiv" class="subdiv" style="z-index: 2;">	
+							<h4 class="divtitle">E-Books</h4>
+							<hr />
+						
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="next" style="z-index: 2;">
+				<a href="javascript:void(0);" onclick="javascript:navNext($(this).parent().parent().attr('id'))"><h1>&raquo;</h1></a>
+			</div>
+			<div class="prev" style="z-index: 2;">
+				<a href="javascript:void(0);" onclick="javascript:navPrev($(this).parent().parent().attr('id'))"><h1>&laquo;</h1></a>
+			</div>
+		</div>
+		
+		<div id="page4" class="page">
+			<div id="videoheader" class="header" style="z-index: 2;">		
+				<h1>Stonecutter's Space</h1>
+				<h4>-Dad, what's dunk?<br />
+					-I don't know son. We're Spurs fans.</h4>
+			</div>
+			<div class="container">
+				<div class="row-fluid">
+					<div class="span12">
+						<div id="videodiv" class="subdiv" style="z-index: 2;">	
+							<h4 class="divtitle">Videos</h4>
+							<hr />
+						
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="next" style="z-index: 2;">
+				<a href="javascript:void(0);" onclick="javascript:navNext($(this).parent().parent().attr('id'))"><h1>&raquo;</h1></a>
+			</div>
+			<div class="prev" style="z-index: 2;">
+				<a href="javascript:void(0);" onclick="javascript:navPrev($(this).parent().parent().attr('id'))"><h1>&laquo;</h1></a>
+			</div>
+		</div>
+		
+		<div id="page5" class="page">
+			<div id="musicheader" class="header" style="z-index: 2;">		
+				<h1>Stonecutter's Space</h1>
+				<h4>You have a long way to go.</h4>
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="span12">
+						<div id="musicplayerdiv" class="subdiv" style="z-index: 2;">	
+							<h4 class="divtitle">Music Player</h4>
+							<hr />
+						
+						</div>
+					</div>
+					<div class="span12">
+						<div id="musicdiv" class="subdiv" style="z-index: 2;">	
+							<h4 class="divtitle">Music</h4>
+							<hr />
+						
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="next" style="z-index: 2;">
+				<a href="javascript:void(0);" onclick="javascript:navNext($(this).parent().parent().attr('id'))"><h1>&raquo;</h1></a>
+			</div>
+			<div class="prev" style="z-index: 2;">
+				<a href="javascript:void(0);" onclick="javascript:navPrev($(this).parent().parent().attr('id'))"><h1>&laquo;</h1></a>
+			</div>
+		</div>
+		
+		<div id="page6" class="page">
+			<div id="logheader" class="header" style="z-index: 2;">		
+				<h1>Stonecutter's Space</h1>
+				<h4>Water dropping day by day wears the hardest rock away.</h4>
+			</div>
+			<div class="container">
+				<div class="row-fluid">
+					<div class="span10 offset1">
+						<div class="subdiv" style="z-index: 2;">
+							<dl class="dl-horizontal">	
+								<dt>Mar 24, 2014</dt>
+								<dd>Add a login static page. </dd>
+								<dt>Mar 23, 2014</dt>
+								<dd>Add links to navbar with tiny issues. Add search to navbar. Complete static part of blog page. </dd>
+								<dt>Mar 22, 2014</dt>
+								<dd>Add all seven pages. Complete slide transition and related navbar actions</dd>
+								<dt>Mar 21, 2014</dt>
+								<dd>Project Starts. Complete navbar, header and mainbody of Home page</dd>
+							</dl>
+						</div>	
+					</div>		
+				</div>		
+			</div>
+			<div class="footer" >
+				<div class="container-fluid">
+					<div class="row-fluid">
+						<div class="span12">
+							<h4>This site is powered by</h4>
+							
+						</div>
+						<div class="span12">
+							<div id="logodiv" style="z-index: 2;">	
+								<a href="http://api.jquery.com/category/ajax/" title="http://api.jquery.com/category/ajax/">
+									<img src="image/ajax-logo.png" style="height:50px">
+								</a>
+								<a href="http://getbootstrap.com/" title="http://getbootstrap.com/">
+									<img src="image/bootstrap-logo.png" style="height:50px">
+								</a>
+								<a href="http://glyphicons.com/" title="http://glyphicons.com/">
+									<img src="image/glyphicons-logo.png" style="width: 150px">
+								</a>
+								<a href="http://hibernate.org/" title="http://hibernate.org/">
+									<img src="image/hibernate-logo.gif" style="height:50px">
+								</a>
+								<a href="http://www.w3.org/TR/html5/" title="http://www.w3.org/TR/html5/">
+									<img src="image/html5-logo.png" style="height:50px">
+								</a>
+								<a href="http://www.w3.org/Style/CSS/" title="http://www.w3.org/Style/CSS/">
+									<img src="image/css3-logo.png" style="height:50px">
+								</a>
+								<a href="http://www.w3.org/standards/webdesign/script" title="http://www.w3.org/standards/webdesign/script">
+									<img src="image/javascript-logo.png" style="height:50px">
+								</a>
+								<a href="http://jquery.com" title="http://jquery.com">
+									<img src="image/jquery-logo.png" style="height:50px">
+								</a>
+								<a href="http://www.mysql.com" title="http://www.mysql.com">
+									<img src="image/mysql-logo.png" style="height:50px">
+								</a>
+								<a href="http://struts.apache.org/development/2.x/" title="http://struts.apache.org/development/2.x/">
+									<img src="image/struts-logo.png" style="height:30px">
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="next" style="z-index: 2;">
+				<a href="javascript:void(0);" onclick="javascript:navNext($(this).parent().parent().attr('id'))"><h1>&raquo;</h1></a>
+			</div>
+			<div class="prev" style="z-index: 2;">
+				<a href="javascript:void(0);" onclick="javascript:navPrev($(this).parent().parent().attr('id'))"><h1>&laquo;</h1></a>
+			</div>
+		</div>
+	</div>
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../assets/js/jquery.js"></script>
+    <script src="../assets/js/bootstrap-transition.js"></script>
+    <script src="../assets/js/bootstrap-alert.js"></script>
+    <script src="../assets/js/bootstrap-modal.js"></script>
+    <script src="../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../assets/js/bootstrap-tab.js"></script>
+    <script src="../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../assets/js/bootstrap-popover.js"></script>
+    <script src="../assets/js/bootstrap-button.js"></script>
+    <script src="../assets/js/bootstrap-collapse.js"></script>
+    <script src="../assets/js/bootstrap-carousel.js"></script>
+    <script src="../assets/js/bootstrap-typeahead.js"></script>
+	
+  </body>
+</html>

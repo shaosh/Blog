@@ -39,6 +39,7 @@ a:hover{
 	-moz-box-shadow:2px 0px 6px #000;
 	background: transparent;
 	font-family: 'Coda', cursive;
+	font-weight:bold;
 }
 
 #navdiv:hover, #navdiv.hover{
@@ -178,4 +179,39 @@ a:hover{
 @font-face{
 	font-family: "Transformers";
 	src: url(../Fonts/Transformers.ttf) format("truetype");
+}
+
+.footer{
+	/* top: 70%; */
+	bottom: 100%;
+	height: 150px;	
+	width: 100%;
+	background-color: #484848;
+	/* background-color: #E8E8E8; */
+	/* background-color: #202020; */
+	color: #C8C8C8;
+	-webkit-box-shadow:2px 0px 6px #000;
+	-moz-box-shadow:2px 0px 6px #000;
+}
+
+.footer container-fluid{
+	width: 100%;
+}
+
+.footer h4{
+	margin-top: 20px;
+}
+
+.footer img{
+	margin: 6px;
+	border-radius: 5px;
+	border:2px #484848 solid;
+}
+
+.footer img:hover{
+	-webkit-box-shadow:2px 0px 6px #000;
+	-moz-box-shadow:2px 0px 6px #000;
+	border:2px #C8C8C8 solid;
+	border-radius: 5px;
+	background: rgba(232,232,232,0.5);
 }
